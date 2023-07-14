@@ -1,3 +1,7 @@
 .add-form {
   margin-bottom: 40px;
 }
+
+.alert {
+  border: 2px solid red;
+}

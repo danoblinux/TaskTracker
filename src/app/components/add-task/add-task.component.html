@@ -2,12 +2,22 @@
   <div class="form-control">
     <label for="text">Task</label>
     <input
+      required
       type="text"
       name="text"
       [(ngModel)]="text"
-      id="text"
       placeholder="Add Task"
+      #textValidation="ngModel"
     />
+    <div
+      *ngIf="
+        textValidation.invalid &&
+        (textValidation.touched || textValidation.dirty)
+      "
+      class="alert"
+    >
+      <div *ngIf="textValidation.errors?.['required']">Task is required.</div>
+    </div>
   </div>
   <div class="form-control">
     <label for="day">Day & Time</label>
