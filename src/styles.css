@@ -32,9 +32,11 @@ body {
   font-size: 15px;
   font-family: inherit;
 }
+
 .btn:focus {
   outline: none;
 }
+
 .btn:active {
   transform: scale(0.98);
 }
@@ -42,6 +44,10 @@ body {
 .btn-block {
   display: block;
   width: 100%;
+}
+
+.btn:disabled {
+  background: #d3d3d3;
 }
 
 .form-control {

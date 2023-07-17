@@ -23,12 +23,6 @@ export class AddTaskComponent {
   }
 
   onSubmit() {
-    if (!this.text) {
-      alert('Please add a task!');
-      return;
-    }
-    //todo: no alert but red input
-
     const newTask = {
       text: this.text,
       day: this.day,

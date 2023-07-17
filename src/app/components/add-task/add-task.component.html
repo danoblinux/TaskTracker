@@ -1,4 +1,9 @@
-<form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
+<form
+  *ngIf="showAddTask"
+  class="add-form"
+  #addTaskForm="ngForm"
+  (ngSubmit)="onSubmit(); addTaskForm.reset()"
+>
   <div class="form-control">
     <label for="text">Task</label>
     <input
@@ -38,5 +43,10 @@
       id="reminder"
     />
   </div>
-  <input type="submit" value="Save Task" class="btn btn-block" />
+  <input
+    type="submit"
+    value="Save Task"
+    class="btn btn-block"
+    [disabled]="addTaskForm.invalid"
+  />
 </form>

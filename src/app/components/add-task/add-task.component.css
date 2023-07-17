@@ -2,6 +2,9 @@
   margin-bottom: 40px;
 }
 
-.alert {
+input.ng-touched.ng-invalid:not(form) {
   border: 2px solid red;
+}
+.alert {
+  color: red;
 }
