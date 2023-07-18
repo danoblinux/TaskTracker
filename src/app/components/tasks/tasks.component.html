@@ -1,8 +1,13 @@
-<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<app-add-task
+  [numberOfTasks]="numberOfTasks"
+  (onAddTask)="addTask($event)"
+></app-add-task>
 
-<app-task-item
-  *ngFor="let task of tasks"
-  [task]="task"
-  (deleteTaskOnDelete)="deleteTask(task)"
-  (toggleOnReminder)="toogleReminder(task)"
-></app-task-item>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  <app-task-item
+    *ngFor="let task of tasks"
+    [task]="task"
+    (deleteTaskOnDelete)="deleteTask(task)"
+    (toggleOnReminder)="toogleReminder(task)"
+  ></app-task-item>
+</div>

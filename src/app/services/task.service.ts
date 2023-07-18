@@ -36,4 +36,20 @@ export class TaskService {
       httpOptions
     );
   }
+
+  swapFirst(taskDragged: Task, taskDropped: Task) {
+    return this.httpClient.put<Task>(
+      `${this.API_URL}/${taskDragged.id}`,
+      taskDropped,
+      httpOptions
+    );
+  }
+
+  swapSecond(taskDragged: Task, taskDropped: Task) {
+    return this.httpClient.put<Task>(
+      `${this.API_URL}/${taskDropped.id}`,
+      taskDragged,
+      httpOptions
+    );
+  }
 }

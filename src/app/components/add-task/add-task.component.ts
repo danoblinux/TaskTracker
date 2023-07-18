@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Task } from 'src/app/types/Task';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class AddTaskComponent {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
+  @Input('numberOfTasks') numberOfTasks: number;
   text: string;
   day: string;
   reminder: boolean;
@@ -26,7 +27,7 @@ export class AddTaskComponent {
     const newTask = {
       text: this.text,
       day: this.day,
-      reminder: this.reminder,
+      reminder: (this.reminder = false),
     };
 
     this.onAddTask.emit(newTask);
