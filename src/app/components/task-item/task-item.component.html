@@ -1,5 +1,6 @@
 <div
   cdkDrag
+  [cdkDragData]="task"
   [ngClass]="{ reminder: task.reminder }"
   class="task"
   (dblclick)="onToogle(task)"

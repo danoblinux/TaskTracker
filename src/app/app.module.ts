@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     DragDropModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

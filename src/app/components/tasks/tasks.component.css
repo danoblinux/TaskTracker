@@ -1,0 +1,25 @@
+.tasks {
+  border: 2px black solid;
+  border-radius: 5px;
+  margin: 5px;
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 49%;
+}
+
+h1 {
+  padding: 20px;
+}
+
+#wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+#toDoTasks {
+  float: left;
+}
+
+#doneTasks {
+  overflow: hidden;
+}

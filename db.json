@@ -7,15 +7,34 @@
       "reminder": false
     },
     {
-      "id": 3,
-      "text": "Robo to je task pre teba ",
-      "day": "DNES",
-      "reminder": true
+      "text": "Visit Dentist",
+      "day": "July 18th at 1:30pm",
+      "reminder": false,
+      "id": 3
     },
     {
-      "text": "dsadsadsadsa",
+      "text": "Do Homework",
+      "day": "July 20th till 8pm",
       "reminder": false,
       "id": 4
+    },
+    {
+      "text": "Call Lawyer",
+      "day": "July 25th",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "text": "Buy Gift",
+      "day": "July 31st",
+      "reminder": false,
+      "id": 6
+    },
+    {
+      "text": "Learn Angular",
+      "day": "August 31st ",
+      "reminder": false,
+      "id": 7
     }
   ]
 }

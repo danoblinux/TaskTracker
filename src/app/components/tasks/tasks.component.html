@@ -3,11 +3,39 @@
   (onAddTask)="addTask($event)"
 ></app-add-task>
 
-<div cdkDropList (cdkDropListDropped)="drop($event)">
-  <app-task-item
-    *ngFor="let task of tasks"
-    [task]="task"
-    (deleteTaskOnDelete)="deleteTask(task)"
-    (toggleOnReminder)="toogleReminder(task)"
-  ></app-task-item>
+<div id="wrapper" cdkDropListGroup>
+  <cdk-virtual-scroll-viewport
+    id="toDoTasks"
+    class="tasks"
+    cdkDropList
+    [cdkDropListData]="toDoTasks"
+    (cdkDropListConnectedTo)="([toDoTasks])"
+    (cdkDropListDropped)="drop($event)"
+    itemSize="10"
+  >
+    <h1>To Do</h1>
+    <app-task-item
+      *cdkVirtualFor="let task of toDoTasks"
+      [task]="task"
+      (deleteTaskOnDelete)="deleteTask(task)"
+      (toggleOnReminder)="toogleReminder(task)"
+    ></app-task-item>
+  </cdk-virtual-scroll-viewport>
+
+  <div
+    id="doneTasks"
+    class="tasks"
+    cdkDropList
+    [cdkDropListData]="doneTasks"
+    (cdkDropListConnectedTo)="([doneTasks])"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <h1>Done</h1>
+    <app-task-item
+      *ngFor="let task of doneTasks"
+      [task]="task"
+      (deleteTaskOnDelete)="deleteTask(task)"
+      (toggleOnReminder)="toogleReminder(task)"
+    ></app-task-item>
+  </div>
 </div>
